@@ -19,7 +19,8 @@ axios.get('http:www.clashapi.xyz/api/cards')
 
         }
     })
-
+var pic = document.getElementsByTagName("img");
+pic.addEventListener("click", flipCard());
 
 function createProfileCards(beers) {
     const beerContainer = document.querySelector('main')
@@ -46,7 +47,7 @@ function createProfileCards(beers) {
 }
 
 function flipCard() {
-    const beerCards = document.querySelectorAll('.beer-card')
+    const beerCards = document.getElementsByTagName('img')
     beerCards.forEach(beer => {
         beer.addEventListener('click', (() => {
             beer.classList.toggle('clicked')
