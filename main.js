@@ -18,4 +18,39 @@ axios.get('http:www.clashapi.xyz/api/cards')
             body.appendChild(img);
 
         }
-    })  
+    })
+
+
+function createProfileCards(beers) {
+    const beerContainer = document.querySelector('main')
+    return beers.forEach(beer => {
+        beerContainer.innerHTML += (`
+                    <div class="beer-card">
+                        <div class="front">
+                            <h2>${cardObj.idName}</h2>
+                            <img src=${beer.image_url}></img>
+                            <p>${beer.tagline}</p>
+                        </div>
+                        <div class="back">
+                            <h3>Player Class</h3>
+                            <p>${beer.first_brewed}</p>
+                            <h3>Player Attributes</h3>
+                            <p>${beer.abv}%</p>
+                            <h3>Weaknesses</h3>
+                            <p>${beer.food_pairing[0]}</p>
+                        </div>
+                    </div>
+            `)
+        return beerContainer
+    })
+}
+
+function flipCard() {
+    const beerCards = document.querySelectorAll('.beer-card')
+    beerCards.forEach(beer => {
+        beer.addEventListener('click', (() => {
+            beer.classList.toggle('clicked')
+            beer.firstElementChild.nextElementSibling.classList.toggle('flipped')
+        }))
+    })
+}
