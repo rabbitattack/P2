@@ -11,7 +11,7 @@ main {
 
 .clicked {
     transform: rotateY(180deg);
-    transition: 500ms;
+    transition: 225ms;
 }
 .flipped {
     z-index: 2;
@@ -60,7 +60,7 @@ ol, ul {
 /* app styling */
 
 body {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Garamond", Courier, monospace;
     background: rgb(51, 51, 51);
 }
 
@@ -92,7 +92,7 @@ div {
 }
 
 img:hover {
-    height: 175px;
+    height: 350px;
     width: auto;
     cursor: pointer;
 }
